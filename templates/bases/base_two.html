@@ -415,7 +415,7 @@
                                 </a>
                             </li> -->
                         </ul>
-                    {% elif request.user.is_project_manager %}
+                    {% elif request.user.is_project_manager or request.user.is_staff %}
                         <ul class="sidebar-menu">
 
                             <li class="sidebar-menu-item">
