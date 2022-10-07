@@ -91,7 +91,6 @@ def list_classroom(request):
     list_classrooms = Classroom.objects.all()
     class_form = ClassroomForm()
     subjects = Subject.objects.all()
-    lessons = Lesson.objects.all()
     students = Student.objects.all()
     get_teacher = get_object_or_404(Teacher, user = request.user)
 
@@ -101,7 +100,6 @@ def list_classroom(request):
         'list_classrooms':list_classrooms,
         'class_form':class_form,
         'subjects': subjects,
-        'lessons': lessons,
         'students': students,
         'page': page, 
         'get_teacher':get_teacher,

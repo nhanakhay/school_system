@@ -251,19 +251,7 @@
                                     <span class="sidebar-menu-text">Programs</span>
                                 </a>
                             </li>
-                            <!-- <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="{% url 'student:my_courses' %}">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">menu_book</span>
-                                    <span class="sidebar-menu-text">My Courses</span>
-                                </a>
-                            </li> -->
-                            <li class="sidebar-menu-item {% if page == 'forum' %} activenav {% endif %}">
-                                <a class="sidebar-menu-button" href="{% url 'forum:forum' %}">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">forum</span>
-                                    <span class="sidebar-menu-text">Forum</span>
-                                </a>
-                            </li>
-                          
+                           
                   
                     {% elif request.user.is_teacher %}
                         <ul class="sidebar-menu">

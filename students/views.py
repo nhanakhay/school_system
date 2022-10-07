@@ -18,30 +18,11 @@ import random
 def studentsDashboard(request):
     page = 'dash'
     student = request.user.student
-    my_announcements = Announcement.objects.filter(scheduled_for='students')
 
-    my_lessons = 0
-    all_lessons = Lesson.objects.all()
-    for lesson in all_lessons:
-        if request.user in lesson.students.all():
-            my_lessons += 1
-
-    my_points = student.points
-    
-
-    if Quotation.objects.all():
-        list_quotes = [x.id for x in Quotation.objects.all()]
-        final_len = len(list_quotes) - 1
-        rangequotes = random.randint(0, final_len)
-        quotes_detail = Quotation.objects.get(id=list_quotes[rangequotes])
-    else:
-        quotes_detail = None
-
+ 
     template_name = 'students/index.html'
     context = {
-        'page': page, 'bible': quotes_detail,
-        'my_lessons': my_lessons, 'my_points': my_points,
-        'my_announcements': my_announcements.count(),
+        'page': page,
     }
     return render(request, template_name, context)
 
@@ -220,12 +201,12 @@ def my_classroom(request):
     page = 'classroom'
 
     teacher = Teacher.objects.all().first()
-    lessons = Lesson.objects.filter(classroom=teacher.classroom, status='Approved')
     subjects = Subject.objects.all()
+    get_student = Student.objects.get(user = request.user)
     template_name = 'students/my_classroom.html'
     context = {
-        'page': page, 'subjects': subjects,
-        'teacher': teacher, 'lessons': lessons,
+        'page': page, 'subjects': get_student,
+        'teacher': teacher,
     }
     return render(request, template_name, context)
 

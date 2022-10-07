@@ -342,58 +342,9 @@
                                     <span class="sidebar-menu-text">Classroom</span>
                                 </a>
                             </li>
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="{% url 'student:my_courses' %}">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">menu_book</span>
-                                    <span class="sidebar-menu-text">My Courses</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="{% url 'student:forum' %}">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">forum</span>
-                                    <span class="sidebar-menu-text">Forum</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="{% url 'student:my_quizzes' %}">
-                                    <span
-                                        class="material-icons sidebar-menu-icon sidebar-menu-icon--left">assignment</span>
-                                    <span class="sidebar-menu-text">Quizzes / Assignment</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="{% url 'student:my_lessons' %}">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">assignment</span>
-                                    <span class="sidebar-menu-text">Lessons</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="{% url 'student:my_inbox' %}"">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">inbox</span>
-                                    <span class="sidebar-menu-text">Inbox</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="{% url 'student:my_announcements' %}">
-                                    <span
-                                        class="material-icons sidebar-menu-icon sidebar-menu-icon--left">announcement</span>
-                                    <span class="sidebar-menu-text">Announcements</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="{% url 'student:my_events' %}">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">event</span>
-                                    <span class="sidebar-menu-text">Events</span>
-                                </a>
-                            </li>
-                            {% comment %} <!-- <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="achievement.html">
-                                    <span
-                                        class="material-icons sidebar-menu-icon sidebar-menu-icon--left">emoji_events</span>
-                                    <span class="sidebar-menu-text">Achievement</span>
-                                </a>
-                            </li> --> {% endcomment %}
-                        </ul>
+                            
+                          
+                                                 </ul>
                     {% elif request.user.is_teacher %}
                         <ul class="sidebar-menu">
 
@@ -409,12 +360,7 @@
                                     <span class="sidebar-menu-text">Classroom</span>
                                 </a>
                             </li>
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="grades.html">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">grade</span>
-                                    <span class="sidebar-menu-text">Grades</span>
-                                </a>
-                            </li>
+                           
                             <li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button" href="{% url 'student:list_student'%}">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">people_alt</span>
@@ -428,38 +374,8 @@
                                     <span class="sidebar-menu-text">Teachers</span>
                                 </a>
                             </li>
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="myCourses.html">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">menu_book</span>
-                                    <span class="sidebar-menu-text">My Courses</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="message_inbox.html">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">inbox</span>
-                                    <span class="sidebar-menu-text">Inbox</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="{% url 'miscellaneous:notice' %}">
-                                    <span
-                                        class="material-icons sidebar-menu-icon sidebar-menu-icon--left">announcements</span>
-                                    <span class="sidebar-menu-text">Announcements</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="{% url 'miscellaneous:events' %}">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">events</span>
-                                    <span class="sidebar-menu-text">Events</span>
-                                </a>
-                            </li>
-                            <!-- <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="achievement.html">
-                                    <span
-                                        class="material-icons sidebar-menu-icon sidebar-menu-icon--left">emoji_events</span>
-                                    <span class="sidebar-menu-text">Achievement</span>
-                                </a>
-                            </li> -->
+                           
+                          
                         </ul>
                     {% elif request.user.is_headteacher %}
                         <ul class="sidebar-menu">
@@ -476,12 +392,7 @@
                                     <span class="sidebar-menu-text">Classroom</span>
                                 </a>
                             </li>
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="grades.html">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">grade</span>
-                                    <span class="sidebar-menu-text">Grades</span>
-                                </a>
-                            </li>
+                            
                             <li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button" href="{% url 'student:list_student'%}">
                                     <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">people_alt</span>
@@ -495,31 +406,7 @@
                                     <span class="sidebar-menu-text">Teachers</span>
                                 </a>
                             </li>
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="myCourses.html">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">menu_book</span>
-                                    <span class="sidebar-menu-text">My Courses</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="message_inbox.html">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">inbox</span>
-                                    <span class="sidebar-menu-text">Inbox</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="{% url 'miscellaneous:notice' %}">
-                                    <span
-                                        class="material-icons sidebar-menu-icon sidebar-menu-icon--left">announcements</span>
-                                    <span class="sidebar-menu-text">Announcements</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="{% url 'miscellaneous:events' %}">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">events</span>
-                                    <span class="sidebar-menu-text">Events</span>
-                                </a>
-                            </li>
+                            
                             <!-- <li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button" href="achievement.html">
                                     <span
@@ -568,25 +455,7 @@
                                 </a>
                             </li>
                             
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="{% url 'dashboard:inbox' %}">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">inbox</span>
-                                    <span class="sidebar-menu-text">Inbox</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="{% url 'miscellaneous:notice' %}">
-                                    <span
-                                        class="material-icons sidebar-menu-icon sidebar-menu-icon--left">announcements</span>
-                                    <span class="sidebar-menu-text">Announcements</span>
-                                </a>
-                            </li>
-                            <li class="sidebar-menu-item">
-                                <a class="sidebar-menu-button" href="{% url 'miscellaneous:events' %}">
-                                    <span class="material-icons sidebar-menu-icon sidebar-menu-icon--left">events</span>
-                                    <span class="sidebar-menu-text">Events</span>
-                                </a>
-                            </li>
+                            
                             <!-- <li class="sidebar-menu-item">
                                 <a class="sidebar-menu-button" href="achievement.html">
                                     <span
