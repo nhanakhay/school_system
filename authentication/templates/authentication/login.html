@@ -83,6 +83,14 @@
                                 window.location.href = "{% url 'dashboard:index' %}";
                                 }, 1000);
                             }
+
+
+                            if (data.is_admin == true) {
+                                setInterval(function() {
+
+                                window.location.href = "{% url 'dashboard:index' %}";
+                                }, 1000);
+                            }
                            
                            
                                 
