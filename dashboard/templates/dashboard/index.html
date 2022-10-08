@@ -119,7 +119,7 @@
                 
                 {% else %}
                 <div class="mb-4">
-                    <img src="{% static 'assets/img/projectmanager.png' %}" width="450" height="280" id="peopleImage"  class="img-fluid shadow"
+                    <img src="{% static '11.png' %}" width="450" height="280" id="peopleImage"  class="img-fluid shadow"
                         style="cursor: pointer;" alt="Image">
                 </div>
                 {% endif %}
@@ -199,12 +199,12 @@
                 <!-- Start Students -->
                 <div class="mb-4" data-toggle="tooltip" data-title="Click to Add Students"
                     data-placement="bottom" data-boundary="window">
-                    <div class="card shadow hoverableStudents students bg-warning">
-                        <div class="card-header d-flex align-items-center border-0 students bg-warning">
-                            <div class="h2 mb-0 mr-3 text-light"><span id="student_count">{{student_count}}</span></div>
+                    <div class="card shadow hoverableStudents students ">
+                        <div class="card-header d-flex align-items-center border-0 students ">
+                            <div class="h2 mb-0 mr-3 "><span id="student_count">{{student_count}}</span></div>
                             <div class="flex">
-                                <p class="card-title text-light">Students</p>
-                                <p class="card-subtitle text-light">Click To Add Student</p>
+                                <p class="card-title ">Students</p>
+                                <p class="card-subtitle ">Click To Add Student</p>
                             </div>
                             <i class="material-icons text-muted ml-2 studentsIcon">add</i>
                         </div>
@@ -452,7 +452,7 @@
 
 <!-- Start izModal for adding Subjects -->
 <div id="modals" class="SubjectModel" data-iziModal-fullscreen="true" data-izimodal-group="alerts"
-    data-iziModal-title="Add Subject" data-iziModal-subtitle="Add a new subject"
+    data-iziModal-title="Add Courses" data-iziModal-subtitle="Add a new Courses"
     data-iziModal-icon="icon-home">
     <div style="padding: 50px">
         <form name="AddNewSubject" id="AddNewSubject">
