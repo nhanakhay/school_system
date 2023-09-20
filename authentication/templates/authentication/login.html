@@ -43,13 +43,13 @@
                 if (username == "" || password == "") {
                     swal("Info", "Enter your username and password", "info");
                     return;
-                } 
+                }
                 else {
                     $.ajax({
-                        
+
                         url: "{% url 'authentication:login_process' %}",
                         type: "POST",
-                        headers:{
+                        headers: {
                             "X-CSRFToken": csrftoken
                         },
                         data: {
@@ -58,52 +58,52 @@
                             'password': $(".password").val(),
                         },
                         dataType: 'json',
-                        success: function (data,response) {
+                        success: function (data, response) {
                             console.log(response.status);
                             console.log(data.msg);
                             console.log(data.is_admin);
-                            swal("Success",data.msg, "success");
+                            swal("Success", data.msg, "success");
 
 
                             if (data.is_student == true) {
-                                setInterval(function() {
-                                window.location.href = "{% url 'student:dashboard' %}";
+                                setInterval(function () {
+                                    window.location.href = "{% url 'student:dashboard' %}";
                                 }, 1000);
                             }
 
                             if (data.is_teacher == true) {
-                                setInterval(function() {
-                                window.location.href = "{% url 'teacher:dashboard' %}";
+                                setInterval(function () {
+                                    window.location.href = "{% url 'teacher:dashboard' %}";
                                 }, 1000);
                             }
 
                             if (data.is_project_manager == true) {
-                                setInterval(function() {
+                                setInterval(function () {
 
-                                window.location.href = "{% url 'dashboard:index' %}";
+                                    window.location.href = "{% url 'dashboard:index' %}";
                                 }, 1000);
                             }
 
 
                             if (data.is_admin == true) {
-                                setInterval(function() {
+                                setInterval(function () {
 
-                                window.location.href = "{% url 'dashboard:index' %}";
+                                    window.location.href = "{% url 'dashboard:index' %}";
                                 }, 1000);
                             }
-                           
-                           
-                                
-                        
-                            
-                            
+
+
+
+
+
+
                         },
                         error: function (response) {
-                            swal("Error","Wrong password or username","error");
+                            swal("Error", "Wrong password or username", "error");
                         }
                     });
 
-                    
+
                     // $.post("login_check.html", {
                     //     username: username,
                     //     password: password
@@ -138,20 +138,21 @@
     </div> -->
 
     <!-- Hero Start -->
-    <section class="cover-user bg-white">
+    <section class="cover-user bg-warning">
         <div class="container-fluid px-0">
-            <div class="row no-gutters position-relative">
-                <div class="col-lg-4 cover-my-30 order-2">
-                    <div class="cover-user-img d-flex align-items-center">
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card login-page border-0" style="z-index: 1">
+            <div class="row no-gutters">
+                <div class="col cover-my-30 order-2">
+                    <div class="cover-user-img d-flex justify-content-center">
+                        <div class="row d-flex align-items-center">
+                            <div class="col">
+                                <div class="card login-page border-0">
                                     <div class="card-body p-0"><br><br><br>
-                                        <center>
+
+                                        <!-- <center>
                                         <a href="index.html" class="sidebar-brand ">
                                             <img src="{% static 'fhas.png' %}">
                                         </a>
-                                    </center>
+                                    </center> -->
                                         <!-- <h4 class="card-title text-left welcome">Welcome to Edify</h4> -->
                                         <p class="text-muted">Please sign-in to your account.</p>
                                         <form class="login-form mt-4">
@@ -159,21 +160,49 @@
                                             <div class="row">
                                                 <div class="col-lg-12">
                                                     <div class="form-group position-relative">
-                                                        <label class="text-muted font-weight">Username</label>
-                                                        {% comment %} <i data-feather="user" class="fea icon-sm icons"></i> {% endcomment %}
+
+
+
+
+
+                                                        <!-- <label class="text-muted font-weight">Username</label> -->
+                                                        <svg width="50" height="50" viewBox="0 0 100 100" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                            <rect width="100" height="100" fill="url(#pattern0)" />
+                                                            <defs>
+                                                                <pattern id="pattern0"
+                                                                    patternContentUnits="objectBoundingBox" width="1"
+                                                                    height="1">
+                                                                    <use xlink:href="#image0_33_26"
+                                                                        transform="scale(0.01)" />
+                                                                </pattern>
+                                                                <image id="image0_33_26" width="100" height="100"
+                                                                    xlink:href="data:image/png;base64,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" />
+                                                            </defs>
+                                                        </svg>
+                                                        {% comment %} <i data-feather="user"
+                                                            class="fea icon-sm icons"></i> {% endcomment %}
                                                         <input type="username" class="username form-control pl-5"
-                                                            placeholder="Username" id="login" name="email"
-                                                            >
+                                                            placeholder="Username" id="login" name="email">
                                                     </div>
                                                 </div>
                                                 <!--end col-->
-
+                                                <!-- PASSWORD FIELDS -->
+                                                <!-- PLACE PICTURE HERE -->
                                                 <div class="col-lg-12">
                                                     <div class="form-group position-relative">
-                                                        <label class="text-muted font-weight">Password</label>
-                                                        {% comment %} <i data-feather="key" class="fea icon-sm icons"></i> {% endcomment %}
+                                                        <!-- <label class="text-muted font-weight">Password</label> -->
+
+
+
+
+
+
+                                                        {% comment %} <i data-feather="key"
+                                                            class="fea icon-sm icons"></i> {% endcomment %}
                                                         <input type="password" class="password form-control pl-5"
-                                                            placeholder="Password" >
+                                                            placeholder="Password">
                                                     </div>
                                                 </div>
                                                 <!--end col-->
@@ -189,13 +218,14 @@
                                                             </div>
                                                         </div>
                                                         <p class="forgot-pass mb-0"><a href="recover_password.html"
-                                                                class="text-muted font-weight-bold">Forgot password ?</a>
+                                                                class="text-muted font-weight-bold">Forgot password
+                                                                ?</a>
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <!--end col-->
-                                                <div class="col-lg-12 mb-0">
-                                                    <button class="btn btn-block login" type="button">Sign in</button>
+                                                <div class="col-3">
+                                                    <button class="btn btn-block login" type="button">log In</button>
                                                 </div>
                                                 <!--end col-->
                                             </div>
@@ -210,8 +240,8 @@
                     </div> <!-- end about detail -->
                 </div> <!-- end col -->
                 {% comment %} {% static 'assets/img/Login.gif' %} {% endcomment %}
-                <div class="col-lg-8 offset-lg-4 padding-less img order-1 d-none d-lg-flex"
-                    style="background-image:url('{% static 'im.png' %}')" data-jarallax='{"speed": 0.5}'></div>
+                <!-- <div class="col offset padding-less img order-1 d-none d-lg-flex"
+                    style="background-image:url('{% static 'i.png' %}')" data-jarallax='{"speed": 0.5}'></div> -->
                 <!-- end col -->
             </div>
             <!--end row-->
@@ -220,6 +250,49 @@
     </section>
     <!--end section-->
     <!-- Hero End -->
+
+    <footer>
+        <link rel="stylesheet" href="footer.css">
+        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="row">
+                    <!-- COL 1 -->
+                    <div class="col-4 ">
+                        <img src="Img/ktu_logo1.png" alt="background pic">
+                    </div>
+
+                    <!-- col 2 -->
+                    <div class="col-4">
+
+                    </div>
+                    <!-- COL 3 -->
+                    <div class="col-4 my-5 pt-2">
+
+                        <div class="row py-3">
+                            <div class="col-12">
+                                <img src="Img/phone_icon.jpg" class="img" alt="..." style="width:30px;height: 30px;">
+                                <a href="/"> +233 249 120 103 </a>
+                            </div>
+                        </div>
+
+                        <div class="row py-2">
+
+                            <div class="col-12">
+                                <img src="Img/mail_icon.png" class="img" alt="..." style="width:30px;height: 30px;">
+                                <a href="/"> kturegistration@edu.gh</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+    </footer>
 
     <!-- javascript -->
     <script src="{% static 'vendor/js/js/jquery-3.5.1.min.js' %}"></script>
