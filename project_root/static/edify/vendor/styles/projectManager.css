@@ -32,9 +32,8 @@ body{
     border: none !important;
 }
 
-.subjects{
-    background-color: #ff214A !important;
-    border: none !important;
+.subject {
+    
 }
 
 .students{
@@ -269,7 +268,7 @@ body{
 }
 
 .bg-second{
-    background: #008000 !important;
+    background: #818FF9 !important;
     border: none !important;
 }
 

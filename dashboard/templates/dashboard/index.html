@@ -11,8 +11,8 @@
     }
 </style>
 
-<div class="navbar navbar-expand pr-0 navbar-light border-bottom-2 shadow" id="info-navbar" data-primary>
-
+<div class="navbar navbar-expand bg-gr pr-0 navbar-light border-bottom-2 shadow" id="info-navbar" data-primary style="background-color: rgba(30, 118, 62, 50%);" >
+<img src="{% static 'images/fbne-ktu-logo2.png' %}" alt="FBNE" style="height: 4em;">
                 <!-- <div class="flex"></div> -->
 
                 <!-- Navbar Menu -->
@@ -119,8 +119,8 @@
                 
                 {% else %}
                 <div class="mb-4">
-                    <img src="{% static '11.png' %}" width="450" height="280" id="peopleImage"  class="img-fluid shadow"
-                        style="cursor: pointer;" alt="Image">
+                    <img src="{% static 'images/dashboardPic.jpg' %}" width="400" height="280" id="peopleImage"  class=" img-thumbnail shadow"
+                        style="cursor: pointer;" alt="Image" style="width: 5em !important;">
                 </div>
                 {% endif %}
 
@@ -129,7 +129,7 @@
 
                 
                 <div class="mb-4" data-toggle="tooltip" data-title="Click to Add Course"
-                    data-placement="top" data-boundary="window">
+                    data-placement="top" data-boundary="window" style="background-color: #818FF9 !important;">
                     <div class="card shadow hoverableSubjects subjects" id="subject">
                         <div class="card-header d-flex align-items-center border-0 subjects">
                             <div class="h2 mb-0 mr-3 text-light"><span id="subject_count">{{subject_count}}</span></div>
